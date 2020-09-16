@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root to: 'pages#dashboard'
 
   devise_for :users, controllers: {
-    'registrations': 'registrations'
+    'registrations': 'registrations',
+    'sessions':      'sessions'
   }
 
   get 'pages/dashboard'
