@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root to: 'pages#dashboard'
 
-  devise_for :users
+  devise_for :users, controllers: {
+    'registrations': 'registrations'
+  }
 
   get 'pages/dashboard'
   get 'pages/icons'
