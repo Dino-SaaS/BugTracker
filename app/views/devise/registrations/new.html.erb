@@ -5,25 +5,7 @@
   <div class="row justify-content-center">
     <div class="col-lg-6 col-md-8">
       <div class="card bg-secondary border-0">
-        <div class="card-header bg-transparent pb-5">
-          <div class="text-muted text-center mt-2 mb-4"><small>Sign up with</small></div>
-          <div class="text-center">
-            <a href="#" class="btn btn-neutral btn-icon mr-4">
-              <span class="btn-inner--icon"><%= image_tag 'icons/common/github.svg' %></span>
-              <span class="btn-inner--text">Github</span>
-            </a>
-            <a href="#" class="btn btn-neutral btn-icon">
-              <span class="btn-inner--icon"><%= image_tag 'icons/common/google.svg' %></span>
-              <span class="btn-inner--text">Google</span>
-            </a>
-          </div>
-        </div>
         <div class="card-body px-lg-5 py-lg-5">
-          <div class="text-center text-muted mb-4">
-            <small>Or sign up with credentials</small>
-          </div>
-
-
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
             <div class="form-group">
@@ -58,25 +40,10 @@
                 <%= f.password_field :password_confirmation, class: "form-control", type: "password", placeholder: "Password Confirmation", autocomplete: "new-password" %>
               </div>
             </div>
-            <div class="text-muted font-italic"><small>password strength: <span class="text-success font-weight-700">strong</span></small></div>
-            <div class="row my-4">
-              <div class="col-12">
-                <div class="custom-control custom-control-alternative custom-checkbox">
-                  <input class="custom-control-input" id="customCheckRegister" type="checkbox">
-                  <label class="custom-control-label" for="customCheckRegister">
-                    <span class="text-muted">I agree with the <a href="#!">Privacy Policy</a></span>
-                  </label>
-                </div>
-              </div>
-            </div>
             <div class="text-center">
               <button type="submit" class="btn btn-primary mt-4">Create Account</button>
             </div>
-
-
           <% end %>
-
-
         </div>
       </div>
     </div>
