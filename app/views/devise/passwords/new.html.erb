@@ -1,0 +1,35 @@
+<% content_for(:title) { 'Forgot your password?' } %>
+<% content_for(:subtitle) { 'Get an email with a link to reset it.' } %>
+
+<div class="container mt--8 pb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-5 col-md-7">
+      <div class="card bg-secondary border-0 mb-0">
+        <div class="card-body px-lg-5 py-lg-5">
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            <div class="form-group">
+              <div class="input-group input-group-merge input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                </div>
+                <%= f.email_field :email, class: "form-control", type: "email", placeholder: "Email", autofocus: true, autocomplete: "email" %>
+              </div>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary my-4">Send me reset password link</button>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-6">
+          <a href="<%= new_user_session_path %>" class="text-light"><small>Log in</small></a>
+        </div>
+        <div class="col-6 text-right">
+          <a href="<%= new_user_registration_path %>" class="text-light"><small>Sign up</small></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   layout :resolve_layout
+  before_action :authenticate_user!, only: :dashboard
 
   private
 
