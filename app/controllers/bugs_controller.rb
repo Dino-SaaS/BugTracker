@@ -1,5 +1,7 @@
 class BugsController < ApplicationController
+  layout 'dashboard'
   before_action :set_bug, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /bugs
   # GET /bugs.json
