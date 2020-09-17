@@ -33,6 +33,8 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.perform_deliveries = false
+  config.action_mailer.delivery_method = :test
 
   config.action_mailer.perform_caching = false
 
