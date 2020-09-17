@@ -20,5 +20,11 @@ module ArgonV1
 
     config.company_name  = 'BugTracker'
     config.default_email = 'Default Email <default@example.com>'
+
+    config.generators do |g|
+      g.jbuilder = false
+      g.view_specs = false
+      g.helper_specs = false
+    end
   end
 end
