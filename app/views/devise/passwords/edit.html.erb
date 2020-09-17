@@ -6,6 +6,7 @@
       <div class="card bg-secondary border-0 mb-0">
         <div class="card-body px-lg-5 py-lg-5">
           <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
             <%= f.hidden_field :reset_password_token %>
             <div class="form-group">
               <div class="input-group input-group-merge input-group-alternative">

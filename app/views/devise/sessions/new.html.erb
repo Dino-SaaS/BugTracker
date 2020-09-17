@@ -7,6 +7,11 @@
       <div class="card bg-secondary border-0 mb-0">
         <div class="card-body px-lg-5 py-lg-5">
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <% if flash['alert'] %>
+              <div id="error_explanation"><p><%= flash['alert'] %></p></div>
+            <% end %>
+
+            <%= render "devise/shared/error_messages", resource: resource %>
             <div class="form-group mb-3">
               <div class="input-group input-group-merge input-group-alternative">
                 <div class="input-group-prepend">
