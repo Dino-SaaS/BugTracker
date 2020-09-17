@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   DEVISE_SIGN_UP_FIELDS = %i[name email password password_confirmation]
   DEVISE_UPDATE_FIELDS = %i[name email password current_password]
 
+  def after_sign_out_path_for(user)
+    new_user_session_path
+  end
+
   protected
 
   def configure_permitted_parameters
