@@ -12,18 +12,18 @@
       <div class="card mt-7">
         <!-- Card header -->
         <div class="card-header border-0">
-          <h3 class="mb-0">Light table</h3>
+          <h3 class="mb-0">All Bugs</h3>
         </div>
         <!-- Light table -->
         <div class="table-responsive">
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
               <tr>
-                <th scope="col" class="sort" data-sort="name">Project</th>
-                <th scope="col" class="sort" data-sort="budget">Budget</th>
+                <th scope="col" class="sort" data-sort="name">Title</th>
+                <th scope="col" class="sort" data-sort="budget">Platform</th>
                 <th scope="col" class="sort" data-sort="status">Status</th>
-                <th scope="col">Users</th>
-                <th scope="col" class="sort" data-sort="completion">Completion</th>
+                <th scope="col" class="sort" data-sort="status">Created</th>
+                <th scope="col" class="sort" data-sort="status">Last Updated</th>
                 <th scope="col"></th>
               </tr>
             </thead>
@@ -57,7 +57,7 @@
                     bg_class: 'bg-warning'
                   } %>
                 </td>
-                <td class="text-right">
+                <td>
                   <%= render 'pages/tables/row_actions' %>
                 </td>
               </tr>
@@ -90,7 +90,7 @@
                     bg_class: 'bg-success'
                   } %>
                 </td>
-                <td class="text-right">
+                <td>
                   <%= render 'pages/tables/row_actions' %>
                 </td>
               </tr>
@@ -123,7 +123,7 @@
                     bg_class: 'bg-danger'
                   } %>
                 </td>
-                <td class="text-right">
+                <td>
                   <%= render 'pages/tables/row_actions' %>
                 </td>
               </tr>
@@ -156,7 +156,7 @@
                     bg_class: 'bg-info'
                   } %>
                 </td>
-                <td class="text-right">
+                <td>
                   <%= render 'pages/tables/row_actions' %>
                 </td>
               </tr>
@@ -189,7 +189,7 @@
                     bg_class: 'bg-success'
                   } %>
                 </td>
-                <td class="text-right">
+                <td>
                   <%= render 'pages/tables/row_actions' %>
                 </td>
               </tr>
