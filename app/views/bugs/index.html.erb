@@ -28,171 +28,35 @@
               </tr>
             </thead>
             <tbody class="list">
-              <tr>
-                <th scope="row">
-                  <div class="media align-items-center">
-                    <a href="#" class="avatar rounded-circle mr-3">
-                      <%= image_tag "theme/bootstrap.jpg", alt: "..." %>
-                    </a>
-                    <div class="media-body">
-                      <span class="name mb-0 text-sm">Argon Design System</span>
+              <% @bugs.each do |bug| %>
+                <tr>
+                  <th scope="row">
+                    <div class="media align-items-center">
+                      <div class="media-body">
+                        <span class="name mb-0 text-sm"><%= bug.title %></span>
+                      </div>
                     </div>
-                  </div>
-                </th>
-                <td class="budget">
-                  $2500 USD
-                </td>
-                <td>
-                  <span class="badge badge-dot mr-4">
-                    <i class="bg-warning"></i>
-                    <span class="status">pending</span>
-                  </span>
-                </td>
-                <td>
-                  <%= render 'pages/tables/avatar_group' %>
-                </td>
-                <td>
-                  <%= render partial: 'pages/tables/progress_bar', locals: {
-                    percent: 60,
-                    bg_class: 'bg-warning'
-                  } %>
-                </td>
-                <td>
-                  <%= render 'pages/tables/row_actions' %>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  <div class="media align-items-center">
-                    <a href="#" class="avatar rounded-circle mr-3">
-                      <%= image_tag "theme/angular.jpg", alt: "..." %>
-                    </a>
-                    <div class="media-body">
-                      <span class="name mb-0 text-sm">Angular Now UI Kit PRO</span>
-                    </div>
-                  </div>
-                </th>
-                <td class="budget">
-                  $1800 USD
-                </td>
-                <td>
-                  <span class="badge badge-dot mr-4">
-                    <i class="bg-success"></i>
-                    <span class="status">completed</span>
-                  </span>
-                </td>
-                <td>
-                  <%= render 'pages/tables/avatar_group' %>
-                </td>
-                <td>
-                  <%= render partial: 'pages/tables/progress_bar', locals: {
-                    percent: 100,
-                    bg_class: 'bg-success'
-                  } %>
-                </td>
-                <td>
-                  <%= render 'pages/tables/row_actions' %>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  <div class="media align-items-center">
-                    <a href="#" class="avatar rounded-circle mr-3">
-                      <%= image_tag "theme/sketch.jpg", alt: "..." %>
-                    </a>
-                    <div class="media-body">
-                      <span class="name mb-0 text-sm">Black Dashboard</span>
-                    </div>
-                  </div>
-                </th>
-                <td class="budget">
-                  $3150 USD
-                </td>
-                <td>
-                  <span class="badge badge-dot mr-4">
-                    <i class="bg-danger"></i>
-                    <span class="status">delayed</span>
-                  </span>
-                </td>
-                <td>
-                  <%= render 'pages/tables/avatar_group' %>
-                </td>
-                <td>
-                  <%= render partial: 'pages/tables/progress_bar', locals: {
-                    percent: 72,
-                    bg_class: 'bg-danger'
-                  } %>
-                </td>
-                <td>
-                  <%= render 'pages/tables/row_actions' %>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  <div class="media align-items-center">
-                    <a href="#" class="avatar rounded-circle mr-3">
-                      <%= image_tag "theme/react.jpg", alt: "..." %>
-                    </a>
-                    <div class="media-body">
-                      <span class="name mb-0 text-sm">React Material Dashboard</span>
-                    </div>
-                  </div>
-                </th>
-                <td class="budget">
-                  $4400 USD
-                </td>
-                <td>
-                  <span class="badge badge-dot mr-4">
-                    <i class="bg-info"></i>
-                    <span class="status">on schedule</span>
-                  </span>
-                </td>
-                <td>
-                  <%= render 'pages/tables/avatar_group' %>
-                </td>
-                <td>
-                  <%= render partial: 'pages/tables/progress_bar', locals: {
-                    percent: 90,
-                    bg_class: 'bg-info'
-                  } %>
-                </td>
-                <td>
-                  <%= render 'pages/tables/row_actions' %>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  <div class="media align-items-center">
-                    <a href="#" class="avatar rounded-circle mr-3">
-                      <%= image_tag "theme/vue.jpg", alt: "..." %>
-                    </a>
-                    <div class="media-body">
-                      <span class="name mb-0 text-sm">Vue Paper UI Kit PRO</span>
-                    </div>
-                  </div>
-                </th>
-                <td class="budget">
-                  $2200 USD
-                </td>
-                <td>
-                  <span class="badge badge-dot mr-4">
-                    <i class="bg-success"></i>
-                    <span class="status">completed</span>
-                  </span>
-                </td>
-                <td>
-                  <%= render 'pages/tables/avatar_group' %>
-                </td>
-                <td>
-                  <%= render partial: 'pages/tables/progress_bar', locals: {
-                    percent: 100,
-                    bg_class: 'bg-success'
-                  } %>
-                </td>
-                <td>
-                  <%= render 'pages/tables/row_actions' %>
-                </td>
-              </tr>
+                  </th>
+                  <td class="budget">
+                    <%= bug.platform %>
+                  </td>
+                  <td>
+                    <span class="badge badge-dot mr-4">
+                      <i class="<%= status_icon_class(bug) %>"></i>
+                      <span class="status"><%= render_status(bug) %></span>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="bug-date"><%= render_date(bug.created_at) %></span>
+                  </td>
+                  <td>
+                    <span class="bug-date"><%= render_date(bug.updated_at) %></span>
+                  </td>
+                  <td>
+                    <%= render 'pages/tables/row_actions' %>
+                  </td>
+                </tr>
+              <% end %>
             </tbody>
           </table>
         </div>
