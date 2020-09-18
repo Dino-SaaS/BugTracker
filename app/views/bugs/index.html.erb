@@ -30,8 +30,8 @@
             </thead>
             <tbody class="list">
               <% @bugs.each do |bug| %>
-                <tr class="bug">
-                  <th scope="row">
+                <tr>
+                  <th scope="row" class="bug">
                     <div class="media align-items-center">
                       <div class="media-body">
                         <span class="bug-title name mb-0 text-sm"><%= bug.title %></span>
