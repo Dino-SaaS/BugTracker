@@ -31,13 +31,15 @@
             <tbody class="list">
               <% @bugs.each do |bug| %>
                 <tr>
-                  <th scope="row" class="bug">
-                    <div class="media align-items-center">
-                      <div class="media-body">
-                        <span class="bug-title name mb-0 text-sm"><%= bug.title %></span>
-                      </div>
-                    </div>
-                  </th>
+                    <th scope="row" class="bug">
+                      <a href="<%= bug_path(bug) %>">
+                        <div class="media align-items-center">
+                          <div class="media-body">
+                            <span class="bug-title name mb-0 text-sm"><%= bug.title %></span>
+                          </div>
+                        </div>
+                      </a>
+                    </th>
                   <td class="budget">
                     <%= bug.platform %>
                   </td>
