@@ -1,3 +1,14 @@
 #error_explanation {
   color: $red;
 }
+
+tr.bug {
+  &:hover {
+    background-color: $secondary;
+    cursor: pointer;
+
+    span.bug-title {
+      text-decoration: underline;
+    }
+  }
+}
