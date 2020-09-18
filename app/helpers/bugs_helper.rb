@@ -6,11 +6,11 @@ module BugsHelper
   def status_icon_class(bug)
     case bug.status
     when 'open'
-      'bg-primary'
-    when 'in_progress'
-      'bg-warning'
-    when 'closed'
       'bg-success'
+    when 'in_progress'
+      'bg-primary'
+    when 'closed'
+      'bg-danger'
     end
   end
 
