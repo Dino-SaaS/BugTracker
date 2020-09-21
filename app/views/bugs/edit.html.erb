@@ -1,6 +1,69 @@
-<h1>Editing Bug</h1>
-
-<%= render 'form', bug: @bug %>
-
-<%= link_to 'Show', @bug %> |
-<%= link_to 'Back', bugs_path %>
+<div class="header bg-primary pb-6">
+  <div class="container-fluid">
+    <div class="row align-items-center py-4">
+      <div class="col-lg-6 col-7">
+        <h6 class="h2 text-white d-inline-block mb-0">Bugs</h6>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--6">
+  <%= form_with model: @bug do |f| %>
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <!-- Card header -->
+          <div class="card-header">
+            <div class="row">
+              <div class="col">
+                <h3><%= @bug.title %></h3>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <h4>Title</h4>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-12 col-lg-9">
+                <%= f.text_field :title, class: "form-control", value: @bug.title %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <h4>Platform</h4>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-6 col-lg-3">
+                <%= f.select(:platform,
+                               options_for_select(platforms_for_select, @bug.platform),
+                               {}, class: 'custom-select') %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <h4>Status</h4>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-6 col-lg-3">
+                <%= f.select(:status,
+                              options_for_select(statuses_for_select, @bug.status),
+                              {}, class: 'custom-select') %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a class="btn btn-secondary" href="<%= bugs_path %>">Back</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

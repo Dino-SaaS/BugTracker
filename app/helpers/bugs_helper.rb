@@ -1,6 +1,6 @@
 module BugsHelper
   def render_status(bug)
-    bug.status.gsub('_',' ').capitalize
+    format_status(bug.status)
   end
 
   def status_icon_class(bug)
@@ -16,5 +16,19 @@ module BugsHelper
 
   def render_date(date)
     date.strftime('%m-%d-%Y at %I:%M%p')
+  end
+
+  def platforms_for_select
+    Bug.platforms.map { |b| [b[0], b[0]] }
+  end
+
+  def statuses_for_select
+    Bug.statuses.map { |b| [format_status(b[0]), b[0]] }
+  end
+
+  private
+
+  def format_status(status)
+    status.gsub('_', ' ').capitalize
   end
 end
