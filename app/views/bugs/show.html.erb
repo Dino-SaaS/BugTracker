@@ -13,7 +13,17 @@
       <div class="card">
         <!-- Card header -->
         <div class="card-header">
-          <h3 class="mb-0"><%= @bug.title %></h3>
+          <div class="row mb-2">
+            <div class="col">
+              <h3><%= @bug.title %></h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <%= link_to 'Back', bugs_path, class: 'btn btn-primary btn-sm' %>
+              <%= link_to 'Edit', edit_bug_path(@bug), class: 'btn btn-primary btn-sm' %>
+            </div>
+          </div>
         </div>
         <div class="card-body">
           <div class="row">
@@ -51,23 +61,3 @@
     </div>
   </div>
 </div>
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @bug.title %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @bug.status %>
-</p>
-
-<p>
-  <strong>Platform:</strong>
-  <%= @bug.platform %>
-</p>
-
-<%= link_to 'Edit', edit_bug_path(@bug) %> |
-<%= link_to 'Back', bugs_path %>
