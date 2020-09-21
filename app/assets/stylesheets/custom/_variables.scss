@@ -81,7 +81,7 @@ $colors: map-merge((
 
 $default:       #112d4e !default;
 $primary:       #3f72af !default;
-$secondary:     #f7fafc !default;
+$secondary:     #f9f7f7 !default;
 $success:       $green !default;
 $info:          $teal !default;
 $warning:       $orange !default;
@@ -214,7 +214,7 @@ $love-color: $red !default;
 
 // Body
 
-$body-bg:       #f9f7f7 !default;
+$body-bg:       $secondary !default;
 $body-color:    $gray-700 !default;
 
 
