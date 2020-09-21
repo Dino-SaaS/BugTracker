@@ -14,6 +14,19 @@
         <!-- Card header -->
         <div class="card-header">
           <div class="row mb-2">
+            <div class="col-12 col-lg-6">
+              <% if notice %>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+                  <span class="alert-text"><%= notice %></span>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="row mb-2">
             <div class="col">
               <h3><%= @bug.title %></h3>
             </div>
