@@ -12,3 +12,12 @@ th.bug {
     }
   }
 }
+
+.action-icon {
+  font-size: large;
+  color: $gray-700;
+  font-weight: 700;
+  &:hover {
+    color: $default;
+  }
+}

@@ -56,7 +56,8 @@
                     <span class="bug-date"><%= render_date(bug.updated_at) %></span>
                   </td>
                   <td>
-                    <%= render 'pages/tables/row_actions' %>
+                    <a class="action-icon" href="<%= edit_bug_path(bug) %>"><%= fa_icon 'edit' %></a>
+                    <a class = "action-icon ml-2" href="<%= bug_path(bug) %>" data-method="delete"><%= fa_icon 'trash' %></a>
                   </td>
                 </tr>
               <% end %>
