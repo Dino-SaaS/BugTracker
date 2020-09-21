@@ -1,4 +1,6 @@
 class Bug < ApplicationRecord
-  enum platform: [:web, :ios, :android]
-  enum status:   [:open, :in_progress, :closed]
+  enum platform: %i[web ios android]
+  enum status:   %i[open in_progress closed]
+
+  validates_presence_of %i[title platform status]
 end
