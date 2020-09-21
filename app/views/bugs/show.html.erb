@@ -20,8 +20,8 @@
           </div>
           <div class="row">
             <div class="col">
-              <%= link_to 'Back', bugs_path, class: 'btn btn-primary btn-sm' %>
-              <%= link_to 'Edit', edit_bug_path(@bug), class: 'btn btn-primary btn-sm' %>
+              <a class="btn btn-primary btn-sm" href="<%= bugs_path %>"><%= fa_icon 'chevron-left' %> Back</a>
+              <a class="btn btn-primary btn-sm" href="<%= edit_bug_path(@bug) %>"><%= fa_icon 'edit' %> Edit</a>
             </div>
           </div>
         </div>
