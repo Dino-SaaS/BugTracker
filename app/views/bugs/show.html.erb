@@ -1,3 +1,57 @@
+<div class="header bg-primary pb-6">
+  <div class="container-fluid">
+    <div class="row align-items-center py-4">
+      <div class="col-lg-6 col-7">
+        <h6 class="h2 text-white d-inline-block mb-0">Bugs</h6>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--6">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <!-- Card header -->
+        <div class="card-header">
+          <h3 class="mb-0"><%= @bug.title %></h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <h4>Title</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p><%= @bug.title %></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h4>Platform</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p><%= @bug.platform %></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h4>Status</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p><%= @bug.status %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <p id="notice"><%= notice %></p>
 
 <p>

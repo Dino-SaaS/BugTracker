@@ -12,6 +12,7 @@ class BugsController < ApplicationController
   # GET /bugs/1
   # GET /bugs/1.json
   def show
+    @bug = Bug.first
   end
 
   # GET /bugs/new
