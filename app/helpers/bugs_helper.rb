@@ -15,7 +15,7 @@ module BugsHelper
   end
 
   def render_date(date)
-    date.strftime('%m-%d-%Y at %I:%M%p')
+    date.strftime('%m-%d-%Y')
   end
 
   def platforms_for_select
