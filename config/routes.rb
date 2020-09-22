@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  root to: 'pages#dashboard'
+  root to: 'bugs#index'
 
   devise_for :users, controllers: {
     'registrations': 'registrations',
     'sessions':      'sessions',
     'passwords':     'passwords'
   }
+
+  resources :bugs
 
   get 'pages/dashboard'
   get 'pages/icons'

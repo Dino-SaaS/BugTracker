@@ -1,0 +1,13 @@
+<%
+dismissible_class = ''
+if local_variables.include?(:dismissible) && dismissible
+  dismissible_class = 'alert-dismissible'
+end
+%>
+<div class="alert <%= "#{alert_type} #{dismissible_class}" %> fade show" role="alert">
+  <span class="alert-icon"><i class="<%= icon_class %>"></i></span>
+  <span class="alert-text"><%= message %></span>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>

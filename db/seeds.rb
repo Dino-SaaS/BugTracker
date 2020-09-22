@@ -1,7 +1,29 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+bugs = [
+  {
+    title: 'iOS app is broken',
+    status: :open,
+    platform: :ios
+  },
+  {
+    title: "Can't log in to Android app",
+    status: :in_progress,
+    platform: :android
+  },
+  {
+    title: 'Website takes way too long to load',
+    status: :closed,
+    platform: :web
+  },
+  {
+    title: "Logo isn't showing up on home page",
+    status: :in_progress,
+    platform: :web
+  },
+  {
+    title: 'Our company name is spelled wrong',
+    status: :closed,
+    platform: :android
+  }
+]
+
+Bug.create(bugs)

@@ -1,0 +1,79 @@
+<div class="container-fluid mt--6">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <!-- Card header -->
+        <div class="card-header">
+          <div class="row mb-2">
+            <div class="col-12 col-lg-6">
+              <% if notice %>
+                <%= render partial: 'shared/alert', locals: {
+                      message: notice,
+                      icon_class: 'ni ni-like-2',
+                      alert_type: 'alert-success',
+                      dismissible: true
+                } %>
+              <% end %>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col">
+              <h3><%= @bug.title %></h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <a class="btn btn-primary btn-sm" href="<%= bugs_path %>"><%= fa_icon 'chevron-left' %> Back</a>
+              <a class="btn btn-primary btn-sm" href="<%= edit_bug_path(@bug) %>"><%= fa_icon 'edit' %> Edit</a>
+              <a class="btn btn-primary btn-sm" data-toggle="modal"
+                data-target="#<%= deletion_modal_id(@bug) %>">
+                <%= fa_icon 'trash' %> Delete
+              </a>
+              <%= render partial: 'shared/modals/confirmation', locals: {
+                id: deletion_modal_id(@bug),
+                title: 'Are you sure?',
+                heading_1: "You're about to delete this bug:",
+                heading_2: @bug.title,
+                path: bug_path(@bug),
+                method: 'delete',
+                confirm_button: 'Delete'
+              } %>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <h4>Title</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p><%= @bug.title %></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h4>Platform</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p><%= @bug.platform %></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h4>Status</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p><%= render_status(@bug) %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

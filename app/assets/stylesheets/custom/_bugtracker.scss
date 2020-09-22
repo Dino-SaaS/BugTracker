@@ -1,3 +1,31 @@
 #error_explanation {
   color: $red;
 }
+
+th.bug {
+  &:hover {
+    background-color: $secondary;
+    cursor: pointer;
+
+    span.bug-title {
+      text-decoration: underline;
+    }
+  }
+}
+
+.action-icon {
+  font-size: large;
+  color: $gray-700;
+  font-weight: 700;
+  &:hover {
+    color: $default;
+    cursor: pointer;
+  }
+}
+
+a.btn-primary {
+  color: $white;
+  &:hover {
+    color: $white;
+  }
+}
