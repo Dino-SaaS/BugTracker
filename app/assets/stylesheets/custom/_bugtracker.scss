@@ -19,5 +19,6 @@ th.bug {
   font-weight: 700;
   &:hover {
     color: $default;
+    cursor: pointer;
   }
 }
