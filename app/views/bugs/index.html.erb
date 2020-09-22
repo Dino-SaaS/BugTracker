@@ -1,92 +1,91 @@
-<div class="container-fluid mt--6">
-  <div class="row">
-    <div class="col">
-      <div class="card">
-        <!-- Card header -->
-        <div class="card-header border-0">
-          <div class="row mb-2">
-            <div class="col-12 col-lg-6">
-              <% if notice %>
-                <%= render partial: 'shared/alert', locals: {
-                      message: notice,
-                      icon_class: 'ni ni-like-2',
-                      alert_type: 'alert-success',
-                      dismissible: true
-                } %>
-              <% end %>
-            </div>
-          </div>
-          <div class="row mb-2">
-            <div class="col">
-              <h3 class="mb-0">All Bugs</h3>
-            </div>
-            <div class="col">
-              <a class="btn btn-primary btn-sm pull-right" href="<%= new_bug_path %>"><%= fa_icon 'plus' %>&nbsp;&nbsp;New Bug</a>
-            </div>
+<div class="row">
+  <div class="col">
+    <div class="card">
+      <!-- Card header -->
+      <div class="card-header border-0">
+        <div class="row mb-2">
+          <div class="col-12 col-lg-6">
+            <% if notice %>
+              <%= render partial: 'shared/alert', locals: {
+                    message: notice,
+                    icon_class: 'ni ni-like-2',
+                    alert_type: 'alert-success',
+                    dismissible: true
+              } %>
+            <% end %>
           </div>
         </div>
-        <!-- Light table -->
-        <div class="table-responsive">
-          <table class="table align-items-center table-flush">
-            <thead class="thead-light">
+        <div class="row mb-2">
+          <div class="col">
+            <h3 class="mb-0">All Bugs</h3>
+          </div>
+          <div class="col">
+            <a class="btn btn-primary btn-sm pull-right" href="<%= new_bug_path %>"><%= fa_icon 'plus' %>&nbsp;&nbsp;New Bug</a>
+          </div>
+        </div>
+      </div>
+      <!-- Light table -->
+      <div class="table-responsive">
+        <table class="table align-items-center table-flush">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col" class="sort" data-sort="name">Title</th>
+              <th scope="col" class="sort" data-sort="budget">Platform</th>
+              <th scope="col" class="sort" data-sort="status">Status</th>
+              <th scope="col" class="sort" data-sort="status">Created</th>
+              <th scope="col" class="sort" data-sort="status">Last Updated</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody class="list">
+            <% @bugs.each do |bug| %>
               <tr>
-                <th scope="col" class="sort" data-sort="name">Title</th>
-                <th scope="col" class="sort" data-sort="budget">Platform</th>
-                <th scope="col" class="sort" data-sort="status">Status</th>
-                <th scope="col" class="sort" data-sort="status">Created</th>
-                <th scope="col" class="sort" data-sort="status">Last Updated</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody class="list">
-              <% @bugs.each do |bug| %>
-                <tr>
-                    <th scope="row" class="bug">
-                      <a href="<%= bug_path(bug) %>">
-                        <div class="media align-items-center">
-                          <div class="media-body">
-                            <span class="bug-title name mb-0 text-sm"><%= bug.title %></span>
-                          </div>
+                  <th scope="row" class="bug">
+                    <a href="<%= bug_path(bug) %>">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <span class="bug-title name mb-0 text-sm"><%= bug.title %></span>
                         </div>
-                      </a>
-                    </th>
-                  <td class="budget">
-                    <%= bug.platform %>
-                  </td>
-                  <td>
-                    <span class="badge badge-dot mr-4">
-                      <i class="<%= status_icon_class(bug) %>"></i>
-                      <span class="status"><%= render_status(bug) %></span>
-                    </span>
-                  </td>
-                  <td>
-                    <span class="bug-date"><%= render_date(bug.created_at) %></span>
-                  </td>
-                  <td>
-                    <span class="bug-date"><%= render_date(bug.updated_at) %></span>
-                  </td>
-                  <td>
-                    <a class="action-icon" href="<%= edit_bug_path(bug) %>"><%= fa_icon 'edit' %></a>
-                    <a class="action-icon ml-2" data-toggle="modal"
-                                                data-target="#<%= deletion_modal_id(bug) %>">
-                                                <%= fa_icon 'trash' %>
-                     <%= render partial: 'shared/modals/confirmation', locals: {
-                       id: deletion_modal_id(bug),
-                       title: 'Are you sure?',
-                       heading_1: "You're about to delete this bug:",
-                       heading_2: bug.title,
-                       path: bug_path(bug),
-                       method: 'delete',
-                       confirm_button: 'Delete'
-                     } %>
+                      </div>
                     </a>
-                  </td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
+                  </th>
+                <td class="budget">
+                  <%= bug.platform %>
+                </td>
+                <td>
+                  <span class="badge badge-dot mr-4">
+                    <i class="<%= status_icon_class(bug) %>"></i>
+                    <span class="status"><%= render_status(bug) %></span>
+                  </span>
+                </td>
+                <td>
+                  <span class="bug-date"><%= render_date(bug.created_at) %></span>
+                </td>
+                <td>
+                  <span class="bug-date"><%= render_date(bug.updated_at) %></span>
+                </td>
+                <td>
+                  <a class="action-icon" href="<%= edit_bug_path(bug) %>"><%= fa_icon 'edit' %></a>
+                  <a class="action-icon ml-2" data-toggle="modal"
+                                              data-target="#<%= deletion_modal_id(bug) %>">
+                                              <%= fa_icon 'trash' %>
+                    <%= render partial: 'shared/modals/confirmation', locals: {
+                      id: deletion_modal_id(bug),
+                      title: 'Are you sure?',
+                      heading_1: "You're about to delete this bug:",
+                      heading_2: bug.title,
+                      path: bug_path(bug),
+                      method: 'delete',
+                      confirm_button: 'Delete'
+                    } %>
+                  </a>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
 </div>
+<%= render 'shared/footer' %>

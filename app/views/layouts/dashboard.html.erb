@@ -21,7 +21,9 @@
     <div class="main-content" id="panel">
       <%= render partial: 'pages/topnav', locals: { bg_color_class: yield(:topnav_bg) } %>
       <%= render partial: 'bugs/header', locals: { text: 'Bugs' } %>
-      <%= yield %>
+      <div class="container-fluid mt--6">
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
