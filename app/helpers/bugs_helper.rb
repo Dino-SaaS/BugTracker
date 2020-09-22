@@ -26,6 +26,10 @@ module BugsHelper
     Bug.statuses.map { |b| [format_status(b[0]), b[0]] }
   end
 
+  def deletion_modal_id(bug)
+    "deletion-modal-bug-#{bug.id}"
+  end
+
   private
 
   def format_status(status)

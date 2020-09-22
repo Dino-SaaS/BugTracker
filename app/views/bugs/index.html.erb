@@ -58,36 +58,20 @@
                   <td>
                     <a class="action-icon" href="<%= edit_bug_path(bug) %>"><%= fa_icon 'edit' %></a>
                     <a class="action-icon ml-2" data-toggle="modal"
-                       data-target="#modal-notification"><%= fa_icon 'trash' %>
+                                                data-target="#<%= deletion_modal_id(bug) %>">
+                                                <%= fa_icon 'trash' %>
+                     <%= render partial: 'shared/modals/confirmation', locals: {
+                       id: deletion_modal_id(bug),
+                       title: 'Are you sure?',
+                       heading_1: "You're about to delete this bug:",
+                       heading_2: bug.title,
+                       path: bug_path(bug),
+                       method: 'delete',
+                       confirm_button: 'Delete'
+                     } %>
                     </a>
                   </td>
                 </tr>
-
-
-                <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
-                  <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
-                    <div class="modal-content bg-gradient-danger">
-                      <div class="modal-header">
-                        <h6 class="modal-title" id="modal-title-notification">Are you sure?</h6>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">×</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <div class="py-3 text-center">
-                          <i class="ni ni-bell-55 ni-3x"></i>
-                          <h4 class="heading mt-4">You're about to delete this bug:</h4>
-                          <p><i><%= bug.title %></i></p>
-                        </div>
-                      </div>
-                      <div class="modal-footer">
-                        <a href="<%= bug_path(bug) %>" id="delete" data-method="delete" class="btn btn-white">DELETE IT</a>
-                        <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button>
-                      </div>
-                    </div>
-                  </div>
-
-
               <% end %>
             </tbody>
           </table>
