@@ -35,6 +35,19 @@
             <div class="col">
               <a class="btn btn-primary btn-sm" href="<%= bugs_path %>"><%= fa_icon 'chevron-left' %> Back</a>
               <a class="btn btn-primary btn-sm" href="<%= edit_bug_path(@bug) %>"><%= fa_icon 'edit' %> Edit</a>
+              <a class="btn btn-primary btn-sm" data-toggle="modal"
+                data-target="#<%= deletion_modal_id(@bug) %>">
+                <%= fa_icon 'trash' %> Delete
+              </a>
+              <%= render partial: 'shared/modals/confirmation', locals: {
+                id: deletion_modal_id(@bug),
+                title: 'Are you sure?',
+                heading_1: "You're about to delete this bug:",
+                heading_2: @bug.title,
+                path: bug_path(@bug),
+                method: 'delete',
+                confirm_button: 'Delete'
+              } %>
             </div>
           </div>
         </div>

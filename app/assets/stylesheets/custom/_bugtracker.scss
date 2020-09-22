@@ -22,3 +22,10 @@ th.bug {
     cursor: pointer;
   }
 }
+
+a.btn-primary {
+  color: $white;
+  &:hover {
+    color: $white;
+  }
+}
