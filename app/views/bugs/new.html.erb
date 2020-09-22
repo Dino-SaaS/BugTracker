@@ -1,5 +1,4 @@
-<h1>New Bug</h1>
-
-<%= render 'form', bug: @bug %>
-
-<%= link_to 'Back', bugs_path %>
+<%= render partial: 'bugs/header', locals: { text: 'Bugs' } %>
+<div class="container-fluid mt--6">
+  <%= render partial: 'bugs/form', locals: { heading: 'New Bug' } %>
+</div>
