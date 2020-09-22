@@ -13,7 +13,23 @@
       <div class="card">
         <!-- Card header -->
         <div class="card-header border-0">
-          <h3 class="mb-0">All Bugs</h3>
+          <div class="row mb-2">
+            <div class="col-12 col-lg-6">
+              <% if notice %>
+                <%= render partial: 'shared/alert', locals: {
+                      message: notice,
+                      icon_class: 'ni ni-like-2',
+                      alert_type: 'alert-success',
+                      dismissible: true
+                } %>
+              <% end %>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col">
+              <h3 class="mb-0">All Bugs</h3>
+            </div>
+          </div>
         </div>
         <!-- Light table -->
         <div class="table-responsive">
