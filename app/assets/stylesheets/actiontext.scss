@@ -34,3 +34,9 @@
     }
   }
 }
+
+trix-editor {
+  &.form-control {
+    min-height: 12rem;
+  }
+}
