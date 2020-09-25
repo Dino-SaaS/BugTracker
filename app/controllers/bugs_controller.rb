@@ -71,6 +71,6 @@ class BugsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bug_params
-      params.require(:bug).permit(:title, :status, :platform)
+      params.require(:bug).permit(:title, :status, :platform, :description)
     end
 end
