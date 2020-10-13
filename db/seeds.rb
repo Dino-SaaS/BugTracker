@@ -1,9 +1,12 @@
-user = User.create(
-  name: 'Test Tester',
-  email: 'test@test.com',
-  password: 'password',
-  password_confirmation: 'password'
-)
+user = User.first
+unless user
+  user = User.create(
+    name: 'Test Tester',
+    email: 'test@test.com',
+    password: 'password',
+    password_confirmation: 'password'
+  )
+end
 
 bugs = [
   {
