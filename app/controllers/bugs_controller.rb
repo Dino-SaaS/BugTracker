@@ -6,7 +6,7 @@ class BugsController < ApplicationController
   # GET /bugs
   # GET /bugs.json
   def index
-    @bugs = Bug.all
+    @bugs = current_user.bugs
   end
 
   # GET /bugs/1
@@ -26,7 +26,7 @@ class BugsController < ApplicationController
   # POST /bugs
   # POST /bugs.json
   def create
-    @bug = Bug.new(bug_params)
+    @bug = current_user.bugs.new(bug_params)
 
     respond_to do |format|
       if @bug.save
