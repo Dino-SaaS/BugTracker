@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  root to: 'bugs#index'
   get 'accounts/new'
   get 'accounts/create'
-  root to: 'bugs#index'
+
+  devise_scope :user do
+    get '/users/sign_up' => 'accounts#new', as: 'new_user_registration'
+  end
 
   devise_for :users, controllers: {
-    'registrations': 'registrations',
     'sessions':      'sessions',
     'passwords':     'passwords'
   }
