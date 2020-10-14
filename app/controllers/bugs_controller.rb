@@ -6,7 +6,7 @@ class BugsController < ApplicationController
   # GET /bugs
   # GET /bugs.json
   def index
-    @bugs = Bug.all
+    @bugs = current_user.account.bugs
   end
 
   # GET /bugs/1
@@ -26,7 +26,7 @@ class BugsController < ApplicationController
   # POST /bugs
   # POST /bugs.json
   def create
-    @bug = Bug.new(bug_params)
+    @bug = current_user.account.bugs.new(bug_params)
 
     respond_to do |format|
       if @bug.save
@@ -66,7 +66,7 @@ class BugsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_bug
-      @bug = Bug.find(params[:id])
+      @bug = current_user.account.bugs.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
