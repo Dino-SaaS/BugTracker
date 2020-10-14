@@ -31,7 +31,7 @@ class AccountsController < ApplicationController
   end
 
   def sign_in_user
-    user = User.find_by_email(account_params[:users_attributes]["0"][:email])
+    user = User.find_by_email(account_params[:users_attributes]['0'][:email])
     sign_in user
   end
 end
