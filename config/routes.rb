@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'accounts/new'
+  get 'accounts/create'
   root to: 'bugs#index'
 
   devise_for :users, controllers: {
@@ -7,5 +9,5 @@ Rails.application.routes.draw do
     'passwords':     'passwords'
   }
 
-  resources :bugs
+  resources :bugs, :accounts
 end
