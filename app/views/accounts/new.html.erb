@@ -7,6 +7,19 @@
       <div class="card bg-secondary border-0">
         <div class="card-body px-lg-5 py-lg-5">
           <%= form_with model: @account, local: true do |f| %>
+            <% if @account.errors.any? %>
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>There was an error creating your account:</strong>
+                <ul>
+                  <% @account.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <% end %>
             <div class="form-group">
               <div class="input-group input-group-merge input-group-alternative mb-3">
                 <div class="input-group-prepend">
