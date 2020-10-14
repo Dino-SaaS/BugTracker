@@ -6,7 +6,7 @@
         <div class="row mb-2">
           <div class="col-12 col-lg-6">
             <% if notice %>
-              <%= render partial: 'shared/alert', locals: {
+              <%= render partial: 'shared/alerts/dismissible', locals: {
                     message: notice,
                     icon_class: 'ni ni-like-2',
                     alert_type: 'alert-success',
