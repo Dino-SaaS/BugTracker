@@ -26,7 +26,7 @@ class BugsController < ApplicationController
   # POST /bugs
   # POST /bugs.json
   def create
-    @bug = Bug.new(bug_params)
+    @bug = current_user.account.bugs.new(bug_params)
 
     respond_to do |format|
       if @bug.save
