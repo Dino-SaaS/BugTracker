@@ -1,14 +1,13 @@
-# [Argon Starter App](https://www.dinosaas.com/articles/starter-app-1-argon)
+# [BugTracker](https://www.dinosaas.com/articles/bugtracker-an-open-source-bug-tracking-app)
 
-Argon is a Rails app with an integrated Bootstrap Dashboard theme. It's built by [DinoSaaS](https://www.dinosaas.com/), with the Argon theme from [Creative Tim](https://www.creative-tim.com/product/argon-design-system).
+BugTracker is an open-source bug tracking app built using the [Argon App Template](https://github.com/Dino-SaaS/Argon) from [DinoSaaS](https://www.dinosaas.com).
 
-
-![Argon Dashboard](https://res.cloudinary.com/do0vbqz18/image/upload/v1599750892/DinoSaas/argon-dashboard.png)
+![BugTracker](https://res.cloudinary.com/do0vbqz18/image/upload/v1602856364/DinoSaas/bug_tracker_hero.png)
 
 ## Getting Started
 Clone the repo:
 
-`git clone git@github.com:Dino-Saas/Argon.git argon-demo`
+`git clone git@github.com:Dino-SaaS/BugTracker.git bug-tracker`
 
 Download the right gems with the right versions (as specified in the `Gemfile`).
 
@@ -22,12 +21,12 @@ Start up your server.
 
 `rails server`
 
-Point your browser to http://localhost:3000 and check out your stunning new Rails dashboard!
+Point your browser to http://localhost:3000.
 
 ## Diving into the codebase
-For a deep-dive into the codebase, and a demo walking you through how to customize it, check out [the article on DinoSaaS](https://www.dinosaas.com/articles/starter-app-1-argon).
+Check out the [article on DinoSaaS](https://www.dinosaas.com/articles/bugtracker-an-open-source-bug-tracking-app) for a step-by-step tutorial on how to build BugTracker from scratch.
 
 ## License
-[Licensed under MIT](https://github.com/Dino-SaaS/Argon/blob/master/LICENSE.md).
+[Licensed under MIT](https://github.com/Dino-SaaS/BugTracker/blob/master/LICENSE.md).
 
 Original Argon Bootstrap theme - Copyright © 2020 Creative Tim (https://www.creative-tim.com)
