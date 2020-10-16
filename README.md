@@ -4,7 +4,7 @@ BugTracker is an open-source bug tracking app built using the [Argon App Templat
 
 ![BugTracker](https://res.cloudinary.com/do0vbqz18/image/upload/v1602856364/DinoSaas/bug_tracker_hero.png)
 
-[Check out the live demo](https://bugtracker.dinosaas.com/)
+[**Check out the live demo**](https://bugtracker.dinosaas.com/)
 
 ## Getting Started
 Clone the repo:
