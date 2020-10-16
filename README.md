@@ -19,6 +19,10 @@ Update Yarn packages as specified in `package.json`.
 
 `yarn install`
 
+Migrate the database.
+
+`rails db:migrate`
+
 Start up your server.
 
 `rails server`
